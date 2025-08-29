@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PPD — Полицейский департамент Пайнвиля (2004)</title>
+<style>
+:root{
+--bg:#0f1220;--panel:#151936;--muted:#9aa3b2;--text:#eaf0ff;--accent:#7aa2ff;--accent-2:#a3ffbf;--danger:#ff7a7a;--warn:#ffd27a;
+--border:rgba(255,255,255,.08);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:linear-gradient(180deg,#0c0f1c,#141a33 40%,#0f1220);color:var(--text);font:500 16px/1.55 "Inter",system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;}
+a{color:var(--accent);text-decoration:none}
+.app{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
+.sidebar{position:sticky;top:0;height:100vh;overflow:auto;background:rgba(255,255,255,.02);border-right:1px solid var(--border);backdrop-filter: blur(8px)}
+.logo{display:flex;gap:12px;align-items:center;padding:20px;border-bottom:1px solid var(--border)}
+.logo .mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#6bf);display:grid;place-items:center;color:#0b1024;font-weight:900}
+.nav{padding:14px}
+.nav a{display:block;padding:10px 12px;border-radius:10px;color:var(--text);opacity:.85;border:1px solid transparent}
+.nav a:hover{background:rgba(255,255,255,.04);opacity:1;border-color:var(--border)}
+.nav .group{margin:8px 0 14px}
+.nav .title{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:16px 12px 6px}
+.main{padding:28px 28px 120px}
+.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
+.search{flex:1;min-width:240px;display:flex;align-items:center;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:12px;padding:8px 12px}
+.search input{background:transparent;border:0;outline:0;color:var(--text);width:100%;font-size:14px}
+.btn{appearance:none;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--text);padding:10px 14px;border-radius:12px;cursor:pointer}
+.btn:hover{background:rgba(255,255,255,.07)}
+.grid{display:grid;gap:18px}
+@media(min-width:980px){.grid{grid-template-columns:repeat(12,1fr)}}
+.card{grid-column: span 12;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.card.half{grid-column: span 12}
+@media(min-width:980px){.card.half{grid-column: span 6}}
+.card .hd{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:16px 18px;border-bottom:1px solid var(--border)}
+.card .hd h2{margin:0;font-size:18px}
+.card .bd{padding:16px 18px}
+.muted{color:var(--muted)}
+.kbd{display:inline-grid;place-items:center;min-width:22px;padding:2px 8px;border:1px solid var(--border);border-bottom-width:2px;border-radius:8px;background:#0a0e20;color:var(--accent)}
+.tag{display:inline-block;padding:4px 8px;border:1px solid var(--border);border-radius:999px;margin:2px 6px 2px 0;color:var(--muted);font-size:12px}
+.list{margin:0;padding-left:18px}
+.table{width:100%;border-collapse:separate;border-spacing:0}
+.table th,.table td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:left}
+.table th{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.kbdline{display:inline-flex;gap:8px;align-items:center}
+.code{background:#0b1024;border:1px solid var(--border);border-radius:12px;padding:12px;overflow:auto}
+.cols{columns:2;column-gap:20px}
+@media(max-width:900px){.cols{columns:1}}
+.pill{padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,.03);font-size:12px;color:var(--muted)}
+.alert{padding:10px 12px;border-left:4px solid var(--warn);background:rgba(255,255,255,.04);border-radius:8px}
+.danger{border-left-color:var(--danger)}
+.ok{border-left-color:var(--accent-2)}
+.copy{float:right;font-size:12px}
+.bbcode{white-space:pre;overflow:auto}
+.foot{margin-top:40px;font-size:12px;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+<div class="logo">
+<div class="mark">PPD</div>
+<div>
+<div style="font-weight:800;letter-spacing:.02em">Pineville PD</div>
+<div class="muted" style="font-size:12px">Оклахома · 2004</div>
+</div>
+</div>
+<nav class="nav" id="nav"></nav>
+</aside>
+<main class="main">
+<div class="toolbar">
+<div class="search"><input id="q" placeholder="Поиск по документу (например, ‘10‑70’, ‘Liberty Street’)"></div>
+<button class="btn" onclick="window.print()">Печать / PDF</button>
+<button class="btn" id="expand">Раскрыть все спойлеры</button>
+</div>
+
+
+<div class="grid" id="content">
+<!-- 1. Общая информация -->
+<section class="card" data-title="1. Общая информация" id="about">
+<div class="hd"><h2>1. Общая информация</h2><span class="pill">Раздел форума: Основные положения</span></div>
+<div class="bd">
+<p><b>Pineville Police Department (PPD)</b> — правоохранительный орган города Пайнвиль, обеспечивающий защиту жизни, прав и собственности граждан. Лор <i>Gray Days S1 — «Просто Бизнес»</i>, место действия: 2004 год, Пайнвиль, штат Оклахома.</p>
+<div class="cols">
+</html>
